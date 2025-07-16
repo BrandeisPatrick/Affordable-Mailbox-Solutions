@@ -7,8 +7,9 @@
   --mail-light-cyan-rgb: 23, 162, 184;
   --mail-orange: #17A2B8; /* Repurposed to teal (was orange; keeps blue coherence) */
   --mail-orange-rgb: 23, 162, 184;
-  --mail-bg: #F8F9FA; /* Neutral: light gray background */
-  --mail-text: #343A40; /* Secondary: dark gray text */
+  --mail-bg: #000000; /* Dark background to match Vanta.js waves */
+  --mail-text: #FFFFFF; /* White text for readability on dark background */
+  --mail-text-rgb: 255, 255, 255; /* Added for opacity-based rules */
   --mail-black: #000000;
   --mail-white: #ffffff;
   --mail-white-rgb: 255, 255, 255;
@@ -162,11 +163,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: var(--mail-dark-blue);
+			color: var(--mail-light-cyan);
 		}
 
 	strong, b {
-		color: var(--mail-black);
+		color: var(--mail-white);
 		font-weight: bold;
 	}
 
@@ -179,7 +180,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: var(--mail-dark-blue);
+		color: var(--mail-white);
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -265,14 +266,14 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 4px rgba(var(--mail-text-rgb), 0.15); /* Changed: Use text-based opacity for visibility on light bg */
+		border-left: solid 4px rgba(var(--mail-text-rgb), 0.15);
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
 
 	code {
-		background: rgba(var(--mail-text-rgb), 0.05); /* Changed: Use text-based for light theme */
+		background: rgba(var(--mail-text-rgb), 0.05);
 		border-radius: 0.25em;
 		border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		font-family: "Courier New", monospace;
@@ -297,7 +298,7 @@ input, select, textarea {
 
 	hr {
 		border: 0;
-		border-bottom: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Better contrast */
+		border-bottom: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		margin: 2em 0;
 	}
 
@@ -1789,7 +1790,7 @@ input, select, textarea {
 
 	.box {
 		border-radius: 0.25em;
-		border: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Better contrast */
+		border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		margin-bottom: 2em;
 		padding: 1.5em;
 	}
@@ -1825,7 +1826,7 @@ input, select, textarea {
 		border: solid 1px !important;
 		border-color: var(--mail-light-cyan) !important;
 		border-radius: 3em;
-		color:        var(--mail-black)    !important;
+		color: var(--mail-white) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -1850,7 +1851,7 @@ input, select, textarea {
 
 .button.primary {
 			background-color: var(--mail-orange);
-			color:            var(--mail-black) !important;
+			color: var(--mail-white) !important;
 		}
 
 /* Features */
@@ -1865,7 +1866,7 @@ input, select, textarea {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		border-radius: 0.25em;
-		border: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+		border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		background: rgba(var(--mail-text-rgb), 0.05);
 		margin: 0 0 2em 0;
 	}
@@ -2172,7 +2173,7 @@ input, select, textarea {
 		}
 
 	label {
-		color: var(--mail-text); /* Changed: Use dark text for labels on light bg */
+		color: var(--mail-text);
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
@@ -2190,7 +2191,7 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: rgba(var(--mail-text-rgb), 0.05); /* Changed: Light bg with dark opacity */
+		background: rgba(var(--mail-text-rgb), 0.05);
 		border-radius: 0.25em;
 		border: none;
 		border: solid 1px rgba(var(--mail-text-rgb), 0.15);
@@ -2217,12 +2218,12 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: var(--mail-dark-blue); /* Changed: Primary blue for focus */
+			border-color: var(--mail-dark-blue);
 			box-shadow: 0 0 0 1px var(--mail-dark-blue);
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(var(--mail-text-rgb), 0.15)' /%3E%3C/svg%3E"); /* Changed: Text-based fill */
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(var(--mail-text-rgb), 0.15)' /%3E%3C/svg%3E");
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
@@ -2276,7 +2277,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: var(--mail-text); /* Changed: Dark text */
+			color: var(--mail-text);
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2302,7 +2303,7 @@ input, select, textarea {
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: rgba(var(--mail-text-rgb), 0.05); /* Changed: Light theme adjustment */
+				background: rgba(var(--mail-text-rgb), 0.05);
 				border-radius: 0.25em;
 				border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 				content: '';
@@ -2319,7 +2320,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: var(--mail-dark-blue); /* Changed: Primary blue check */
+			background: var(--mail-dark-blue);
 			border-color: var(--mail-dark-blue);
 			color: var(--mail-white);
 			content: '\f00c';
@@ -2340,7 +2341,7 @@ input, select, textarea {
 	}
 
 	::-webkit-input-placeholder {
-		color: rgba(var(--mail-text-rgb), 0.35) !important; /* Changed: Dark placeholder */
+		color: rgba(var(--mail-text-rgb), 0.35) !important;
 		opacity: 1.0;
 	}
 
@@ -2400,7 +2401,7 @@ input, select, textarea {
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: var(--mail-light-cyan); /* Changed: Teal bg for icons */
+			background: var(--mail-light-cyan);
 			border-radius: 100%;
 			color: var(--mail-white);
 			text-align: center;
@@ -2518,7 +2519,7 @@ input, select, textarea {
 		}
 
 			ul.alt li {
-				border-top: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+				border-top: solid 1px rgba(var(--mail-text-rgb), 0.15);
 				padding: 0.5em 0;
 			}
 
@@ -2712,7 +2713,7 @@ input, select, textarea {
 	}
 
 		ul.menu > li {
-			border-left: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+			border-left: solid 1px rgba(var(--mail-text-rgb), 0.15);
 			display: inline-block;
 			line-height: 1;
 			margin-left: 1.5em;
@@ -2744,7 +2745,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: rgba(var(--mail-text-rgb), 0.55); /* Changed: Subtle dark gray */
+		color: rgba(var(--mail-text-rgb), 0.55);
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2784,7 +2785,7 @@ input, select, textarea {
 
 		.split > :nth-child(2n - 1) {
 			padding-right: 2.5em;
-			border-right: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+			border-right: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		}
 
 		.split > :nth-child(2n) {
@@ -2941,7 +2942,7 @@ input, select, textarea {
 			}
 
 		.spotlights > section:nth-child(2) {
-			background-color: rgba(var(--mail-text-rgb), 0.05); /* Changed: Light gray */
+			background-color: rgba(var(--mail-text-rgb), 0.05);
 		}
 
 		.spotlights > section:nth-child(3) {
@@ -3021,7 +3022,7 @@ input, select, textarea {
 	}
 
 		table tbody tr {
-			border: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+			border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 			border-left: 0;
 			border-right: 0;
 		}
@@ -3035,7 +3036,7 @@ input, select, textarea {
 		}
 
 		table th {
-			color: var(--mail-dark-blue); /* Changed: Primary blue headers */
+			color: var(--mail-white);
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3381,7 +3382,7 @@ input, select, textarea {
 		}
 
 	#footer > .inner a {
-		border-bottom-color: rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+		border-bottom-color: rgba(var(--mail-text-rgb), 0.15);
 	}
 
 		#footer > .inner a:hover {
