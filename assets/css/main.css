@@ -1,20 +1,20 @@
 @import url(fontawesome-all.min.css);
 
 :root {
-  --mail-dark-blue: #253665;
-  --mail-dark-blue-rgb: 37, 54, 101;
-  --mail-light-cyan: #60C0D0;
-  --mail-light-cyan-rgb: 96, 192, 208;
-  --mail-orange: #F5A623;
-  --mail-orange-rgb: 245, 166, 35;
-  --mail-bg: #F5F5F5;
-  --mail-text: #333333;
+  --mail-dark-blue: #007BFF; /* Primary: bright blue for headers, sections, buttons */
+  --mail-dark-blue-rgb: 0, 123, 255;
+  --mail-light-cyan: #17A2B8; /* Accent: teal for links, hovers, gradients */
+  --mail-light-cyan-rgb: 23, 162, 184;
+  --mail-orange: #17A2B8; /* Repurposed to teal (was orange; keeps blue coherence) */
+  --mail-orange-rgb: 23, 162, 184;
+  --mail-bg: #F8F9FA; /* Neutral: light gray background */
+  --mail-text: #343A40; /* Secondary: dark gray text */
   --mail-black: #000000;
   --mail-white: #ffffff;
   --mail-white-rgb: 255, 255, 255;
-  --mail-dark-blue-alt: #493382;
-  --mail-light-cyan-alt: #3e4094;
-  --mail-orange-alt: #953d75;
+  --mail-dark-blue-alt: #0056B3; /* Darker primary blue for alts */
+  --mail-light-cyan-alt: #138496; /* Darker teal for alts */
+  --mail-orange-alt: #138496; /* Darker teal for alts */
 }
 
 /*
@@ -265,16 +265,16 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 4px rgba(var(--mail-white-rgb), 0.15);
+		border-left: solid 4px rgba(var(--mail-text-rgb), 0.15); /* Changed: Use text-based opacity for visibility on light bg */
 		font-style: italic;
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
 	}
 
 	code {
-		background: rgba(var(--mail-white-rgb), 0.05);
+		background: rgba(var(--mail-text-rgb), 0.05); /* Changed: Use text-based for light theme */
 		border-radius: 0.25em;
-		border: solid 1px rgba(var(--mail-white-rgb), 0.15);
+		border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
@@ -297,7 +297,7 @@ input, select, textarea {
 
 	hr {
 		border: 0;
-		border-bottom: solid 1px rgba(var(--mail-white-rgb), 0.15);
+		border-bottom: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Better contrast */
 		margin: 2em 0;
 	}
 
@@ -1789,7 +1789,7 @@ input, select, textarea {
 
 	.box {
 		border-radius: 0.25em;
-		border: solid 1px rgba(var(--mail-white-rgb), 0.15);
+		border: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Better contrast */
 		margin-bottom: 2em;
 		padding: 1.5em;
 	}
@@ -1865,15 +1865,15 @@ input, select, textarea {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		border-radius: 0.25em;
-		border: solid 1px rgba(var(--mail-white-rgb), 0.15);
-		background: rgba(var(--mail-white-rgb), 0.05);
+		border: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
+		background: rgba(var(--mail-text-rgb), 0.05);
 		margin: 0 0 2em 0;
 	}
 
 		.features section {
 			padding: 3.5em 3em 1em 7em ;
 			width: 50%;
-			border-top: solid 1px rgba(var(--mail-white-rgb), 0.15);
+			border-top: solid 1px rgba(var(--mail-text-rgb), 0.15);
 			position: relative;
 		}
 
@@ -1882,7 +1882,7 @@ input, select, textarea {
 			}
 
 			.features section:nth-child(2n) {
-				border-left: solid 1px rgba(var(--mail-white-rgb), 0.15);
+				border-left: solid 1px rgba(var(--mail-text-rgb), 0.15);
 			}
 
 			.features section .icon {
@@ -2172,7 +2172,7 @@ input, select, textarea {
 		}
 
 	label {
-		color: var(--mail-white);
+		color: var(--mail-text); /* Changed: Use dark text for labels on light bg */
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
@@ -2190,10 +2190,10 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background: rgba(var(--mail-white-rgb), 0.05);
+		background: rgba(var(--mail-text-rgb), 0.05); /* Changed: Light bg with dark opacity */
 		border-radius: 0.25em;
 		border: none;
-		border: solid 1px rgba(var(--mail-white-rgb), 0.15);
+		border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 		color: inherit;
 		display: block;
 		outline: 0;
@@ -2217,12 +2217,12 @@ input, select, textarea {
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: var(--mail-white);
-			box-shadow: 0 0 0 1px var(--mail-white);
+			border-color: var(--mail-dark-blue); /* Changed: Primary blue for focus */
+			box-shadow: 0 0 0 1px var(--mail-dark-blue);
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(var(--mail-white-rgb), 0.15)' /%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(var(--mail-text-rgb), 0.15)' /%3E%3C/svg%3E"); /* Changed: Text-based fill */
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
@@ -2232,7 +2232,7 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #ffffff;
+			color: var(--mail-white);
 			background: var(--mail-dark-blue);
 		}
 
@@ -2276,7 +2276,7 @@ input, select, textarea {
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(var(--mail-white-rgb), 0.55);
+			color: var(--mail-text); /* Changed: Dark text */
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2302,9 +2302,9 @@ input, select, textarea {
 
 			input[type="checkbox"] + label:before,
 			input[type="radio"] + label:before {
-				background: rgba(var(--mail-white-rgb), 0.05);
+				background: rgba(var(--mail-text-rgb), 0.05); /* Changed: Light theme adjustment */
 				border-radius: 0.25em;
-				border: solid 1px rgba(var(--mail-white-rgb), 0.15);
+				border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 				content: '';
 				display: inline-block;
 				font-size: 0.8em;
@@ -2319,16 +2319,16 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: var(--mail-white);
-			border-color: var(--mail-white);
-			color: var(--mail-orange);
+			background: var(--mail-dark-blue); /* Changed: Primary blue check */
+			border-color: var(--mail-dark-blue);
+			color: var(--mail-white);
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: var(--mail-white);
-			box-shadow: 0 0 0 1px var(--mail-white);
+			border-color: var(--mail-dark-blue);
+			box-shadow: 0 0 0 1px var(--mail-dark-blue);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2340,22 +2340,22 @@ input, select, textarea {
 	}
 
 	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(var(--mail-text-rgb), 0.35) !important; /* Changed: Dark placeholder */
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(var(--mail-text-rgb), 0.35) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(var(--mail-text-rgb), 0.35) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(var(--mail-text-rgb), 0.35) !important;
 		opacity: 1.0;
 	}
 
@@ -2400,9 +2400,9 @@ input, select, textarea {
 			width: 2.5em;
 			height: 2.5em;
 			display: block;
-			background: var(--mail-white);
+			background: var(--mail-light-cyan); /* Changed: Teal bg for icons */
 			border-radius: 100%;
-			color: var(--mail-dark-blue);
+			color: var(--mail-white);
 			text-align: center;
 			line-height: 2.5em;
 			margin: 0 0 1.3em 0;
@@ -2518,7 +2518,7 @@ input, select, textarea {
 		}
 
 			ul.alt li {
-				border-top: solid 1px rgba(255, 255, 255, 0.15);
+				border-top: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
 				padding: 0.5em 0;
 			}
 
@@ -2712,7 +2712,7 @@ input, select, textarea {
 	}
 
 		ul.menu > li {
-			border-left: solid 1px rgba(255, 255, 255, 0.15);
+			border-left: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
 			display: inline-block;
 			line-height: 1;
 			margin-left: 1.5em;
@@ -2744,7 +2744,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: rgba(255, 255, 255, 0.35);
+		color: rgba(var(--mail-text-rgb), 0.55); /* Changed: Subtle dark gray */
 		position: relative;
 		margin: 0 0 1.5em 0;
 	}
@@ -2784,7 +2784,7 @@ input, select, textarea {
 
 		.split > :nth-child(2n - 1) {
 			padding-right: 2.5em;
-			border-right: solid 1px rgba(255, 255, 255, 0.15);
+			border-right: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
 		}
 
 		.split > :nth-child(2n) {
@@ -2830,7 +2830,7 @@ input, select, textarea {
 			}
 
 				.split > * {
-					border-top: solid 1px rgba(255, 255, 255, 0.15);
+					border-top: solid 1px rgba(var(--mail-text-rgb), 0.15);
 					margin: 4em 0 0 0;
 					padding: 4em 0 0 0;
 					width: 100% !important;
@@ -2941,11 +2941,11 @@ input, select, textarea {
 			}
 
 		.spotlights > section:nth-child(2) {
-			background-color: rgba(var(--mail-black-rgb), 0.05);
+			background-color: rgba(var(--mail-text-rgb), 0.05); /* Changed: Light gray */
 		}
 
 		.spotlights > section:nth-child(3) {
-			background-color: rgba(var(--mail-black-rgb), 0.1);
+			background-color: rgba(var(--mail-text-rgb), 0.1);
 		}
 
 		.spotlights > section.inactive > .image:before,
@@ -3021,13 +3021,13 @@ input, select, textarea {
 	}
 
 		table tbody tr {
-			border: solid 1px rgba(var(--mail-white-rgb), 0.15);
+			border: solid 1px rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
 			border-left: 0;
 			border-right: 0;
 		}
 
 			table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(var(--mail-white-rgb), 0.05);
+				background-color: rgba(var(--mail-text-rgb), 0.05);
 			}
 
 		table td {
@@ -3035,7 +3035,7 @@ input, select, textarea {
 		}
 
 		table th {
-			color: var(--mail-white);
+			color: var(--mail-dark-blue); /* Changed: Primary blue headers */
 			font-size: 1em;
 			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
@@ -3043,11 +3043,11 @@ input, select, textarea {
 		}
 
 		table thead {
-			border-bottom: solid 2px rgba(var(--mail-white-rgb), 0.15);
+			border-bottom: solid 2px rgba(var(--mail-text-rgb), 0.15);
 		}
 
 		table tfoot {
-			border-top: solid 2px rgba(var(--mail-white-rgb), 0.15);
+			border-top: solid 2px rgba(var(--mail-text-rgb), 0.15);
 		}
 
 		table.alt {
@@ -3055,7 +3055,7 @@ input, select, textarea {
 		}
 
 			table.alt tbody tr td {
-				border: solid 1px rgba(var(--mail-white-rgb), 0.15);
+				border: solid 1px rgba(var(--mail-text-rgb), 0.15);
 				border-left-width: 0;
 				border-top-width: 0;
 			}
@@ -3381,7 +3381,7 @@ input, select, textarea {
 		}
 
 	#footer > .inner a {
-		border-bottom-color: rgba(var(--mail-white-rgb), 0.15);
+		border-bottom-color: rgba(var(--mail-text-rgb), 0.15); /* Changed: Contrast */
 	}
 
 		#footer > .inner a:hover {
@@ -3390,7 +3390,7 @@ input, select, textarea {
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
-		color: rgba(var(--mail-white-rgb), 0.15);
+		color: rgba(var(--mail-text-rgb), 0.15);
 	}
 
 	#header + #wrapper + #footer > .inner {
