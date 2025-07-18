@@ -180,11 +180,12 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: var(--mail-white);
-		font-weight: bold;
-		line-height: 1.5;
-		margin: 0 0 0.5em 0;
-	}
+	color: var(--mail-white);
+	font-weight: bold;
+	line-height: 1.5;
+	margin: 0 0 0.5em 0;
+	font-size: 4.5em;
+}
 
 		h1.major:after {
 				background-image: linear-gradient(
@@ -228,7 +229,7 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 
 		h1 {
-			font-size: 2em;
+			font-size: 3.5em;
 		}
 
 		h2 {
